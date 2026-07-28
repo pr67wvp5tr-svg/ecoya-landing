@@ -226,21 +226,21 @@ footer{border-top:1px solid var(--rule);padding:36px 0 48px}
 .snap-sec .lead{color:var(--ink-soft);max-width:34em;margin:14px auto 0;font-size:clamp(15px,1.9vw,17px)}
 .inds-sec{background:var(--card2)}
 /* how-it-works flow */
-.flow{margin-top:46px;display:flex;align-items:flex-start;justify-content:center;gap:6px}
-@media(max-width:820px){.flow{flex-direction:column;align-items:center;gap:4px}}
-.fstep{flex:1;max-width:210px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;padding-top:4px}
-.fnode{position:relative;border-radius:50%;background:var(--card);border:2px solid var(--brand);color:var(--brand);font-family:var(--disp);font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.fnode.n1{width:46px;height:46px;font-size:15px}
-.fnode.n2{width:54px;height:54px;font-size:17px}
-.fnode.n3{width:62px;height:62px;font-size:19px}
-.fnode.n4{width:70px;height:70px;font-size:21px;background:var(--brand);color:#fff;border-color:var(--brand)}
-.fnode::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--brand);opacity:0}
-@media (prefers-reduced-motion:no-preference){.fnode::after{animation:fnpulse 4.4s ease-out infinite}.fstep:nth-child(3) .fnode::after{animation-delay:.5s}.fstep:nth-child(5) .fnode::after{animation-delay:1s}.fstep:nth-child(7) .fnode::after{animation-delay:1.5s}}
-@keyframes fnpulse{0%{transform:scale(.85);opacity:.8}30%{opacity:0}100%{opacity:0;transform:scale(1.5)}}
+.flow{margin-top:46px;position:relative;display:flex;justify-content:center;gap:8px}
+@media(max-width:820px){.flow{flex-direction:column;align-items:center;gap:22px}}
+.fline{position:absolute;top:30px;left:13%;right:13%;height:2px;background:var(--rule);border-radius:2px;z-index:0}
+@media(max-width:820px){.fline{display:none}}
+.fcomet{position:absolute;top:50%;left:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px var(--brand-soft),0 0 12px 2px var(--brand)}
+@media (prefers-reduced-motion:no-preference){.fcomet{animation:fcomet 4.8s linear infinite}}
+@media (prefers-reduced-motion:reduce){.fcomet{display:none}}
+@keyframes fcomet{0%{left:0}92%,100%{left:100%}}
+.fstep{flex:1;max-width:210px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1}
+.fnode{width:52px;height:52px;border-radius:50%;background:var(--card);border:2px solid var(--brand);color:var(--brand);font-family:var(--disp);font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:0 0 0 5px var(--paper)}
+@media(max-width:820px){.fnode{box-shadow:none}}
+@media (prefers-reduced-motion:no-preference){.fnode{animation:fnfill 4.8s ease-in-out infinite}.fnode.n2{animation-delay:1.2s}.fnode.n3{animation-delay:2.4s}.fnode.n4{animation-delay:3.6s}}
+@keyframes fnfill{0%,24%,100%{background:var(--card);color:var(--brand);transform:scale(1)}4%,20%{background:var(--brand);color:#fff;transform:scale(1.07)}}
 .fstep h3{font-size:16px;font-weight:700}
 .fstep p{margin-top:6px;font-size:13.5px;color:var(--ink-soft);line-height:1.55;max-width:15em}
-.farrow{align-self:flex-start;margin-top:28px;color:var(--brand);font-family:var(--disp);font-size:22px;font-weight:700;opacity:.6}
-@media(max-width:820px){.farrow{align-self:center;transform:rotate(90deg);margin:2px 0}}
 /* industries */
 .inds{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
 @media(max-width:820px){.inds{grid-template-columns:1fr 1fr}}@media(max-width:520px){.inds{grid-template-columns:1fr}}
@@ -301,12 +301,10 @@ footer{border-top:1px solid var(--rule);padding:36px 0 48px}
   <div class="kick">How it works</div>
   <div class="h2">말 한마디가, 검증된 기록이 되기까지</div>
   <div class="flow">
+    <div class="fline" aria-hidden="true"><span class="fcomet"></span></div>
     <div class="fstep"><div class="fnode n1"><span>01</span></div><h3>말로 지시</h3><p>필요한 작업을 한 문장으로 적습니다</p></div>
-    <div class="farrow" aria-hidden="true">→</div>
     <div class="fstep"><div class="fnode n2"><span>02</span></div><h3>AI가 목록화</h3><p>업무에 맞는 체크리스트와 찍을 사진을 자동으로 뽑습니다</p></div>
-    <div class="farrow" aria-hidden="true">→</div>
     <div class="fstep"><div class="fnode n3"><span>03</span></div><h3>현장에서 촬영</h3><p>작업자는 목록대로 찍으며 작업을 마칩니다</p></div>
-    <div class="farrow" aria-hidden="true">→</div>
     <div class="fstep"><div class="fnode n4"><span>04</span></div><h3>확인 후 전달</h3><p>사람이 확인하면 믿을 수 있는 리포트로 전달됩니다</p></div>
   </div>
 </div></section>
@@ -327,14 +325,13 @@ footer{border-top:1px solid var(--rule);padding:36px 0 48px}
 
 <section id="ai" class="snap-sec ai-sec"><div class="wrap">
   <div class="kick">AI × 사람</div>
-  <div class="h2">AI가 차려주고, 판단은 당신이 합니다</div>
-  <p class="lead">번거로운 준비는 AI가 대신합니다. 무엇을 증거로 남길지, 마지막 결정은 사람이 합니다</p>
+  <div class="h2">준비는 AI가, 결정은 사람이</div>
+  <p class="lead">손이 많이 가는 정리는 AI가 대신합니다. 무엇을 증거로 남길지, 마지막 결정은 사람이 합니다</p>
   <div class="pgrid">
     <div class="pc"><div class="n">AI · 준비</div><h3>말을 목록으로 바꿉니다</h3><p>자연어 지시를 '찍을 목록'으로 정리해, 준비에 드는 시간을 없앱니다</p></div>
     <div class="pc"><div class="n">사람 · 판단</div><h3>남길 것을 정합니다</h3><p>무엇을 확인하고 내보낼지, 결정하는 사람은 당신입니다</p></div>
     <div class="pc"><div class="n">시스템 · 기록</div><h3>근거로 쌓습니다</h3><p>확인한 것만 근거와 함께 남아, 언제든 되짚을 수 있습니다</p></div>
   </div>
-  <p class="principle-line">AI가 제안 · 사람이 확정 · 시스템이 기록</p>
 </div></section>
 
 <section class="snap-sec deliv-sec"><div class="wrap">
