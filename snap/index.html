@@ -210,15 +210,16 @@ footer{border-top:1px solid var(--rule);padding:36px 0 48px}
 :root[data-theme="light"] .snap-logo.light{display:block}
 :root[data-theme="light"] .snap-logo.dark{display:none}
 .snap-hero{padding:clamp(44px,6vw,84px) 0 clamp(36px,5vw,60px)}
-.snap-hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,56px);align-items:center}
-@media(max-width:880px){.snap-hero .wrap{grid-template-columns:1fr;gap:34px}}
+.snap-hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,56px);align-items:center}
+@media(max-width:880px){.snap-hero-grid{grid-template-columns:1fr;gap:34px}}
 .snap-hero h1{font-size:clamp(31px,4.8vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.12;text-wrap:balance;margin-top:14px}
 .snap-hero .lede{margin-top:18px;font-size:clamp(16px,2vw,19px);color:var(--ink-soft);max-width:26em}
 .snap-chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .snap-chips span{font-family:var(--disp);font-weight:500;font-size:12.5px;color:var(--ink-soft);background:var(--card2);border:1px solid var(--rule);border-radius:999px;padding:6px 12px}
 .snap-chips .chip-more{background:var(--brand-soft);border-color:transparent;color:var(--brand);font-weight:600}
 .snap-chips .chip-more b{font-weight:700;display:inline-block;min-width:5.2em;text-align:left;transition:opacity .25s}
-.snap-hero .hero-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+.snap-hero .hero-cta{margin-top:clamp(36px,4.5vw,52px);display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.snap-hero .btn,.closing .btn{border-radius:999px;padding:13px 28px}
 .snap-shot{border:1px solid var(--rule);border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -38px rgba(21,34,56,.5);background:var(--card)}
 .snap-shot img{display:block;width:100%;height:auto}
 .snap-sec{text-align:center}
@@ -281,20 +282,22 @@ footer{border-top:1px solid var(--rule);padding:36px 0 48px}
 </div></nav>
 
 <header class="snap-hero" id="top"><div class="wrap">
-  <div class="snap-hero-txt">
-    <div class="kick">ECOYA SNAP</div>
-    <h1>말로 지시하면,<br>AI가 찍을 목록을 만듭니다</h1>
-    <p class="lede">현장은 목록대로 찍기만. 확인을 거쳐 믿을 수 있는 기록으로 남습니다</p>
-    <div class="snap-chips">
-      <span>보험 손해사정</span><span>입주·이사 청소</span><span>설비·시설 점검</span><span>물류·컨테이너 검사</span><span>재활용 품질검수</span>
-      <span class="chip-more">그리고 <b id="rotWord">안전 점검</b></span>
+  <div class="snap-hero-grid">
+    <div class="snap-hero-txt">
+      <div class="kick">ECOYA SNAP</div>
+      <h1>말로 지시하면,<br>AI가 찍을 목록을 만듭니다</h1>
+      <p class="lede">현장은 목록대로 찍기만. 확인을 거쳐 믿을 수 있는 기록으로 남습니다</p>
+      <div class="snap-chips">
+        <span>보험 손해사정</span><span>입주·이사 청소</span><span>설비·시설 점검</span><span>물류·컨테이너 검사</span><span>재활용 품질검수</span>
+        <span class="chip-more">그리고 <b id="rotWord">안전 점검</b></span>
+      </div>
     </div>
-    <div class="hero-cta">
-      <a class="btn btn-solid" href="../contact/">도입 문의</a>
-      <a class="btn btn-ghost" href="#how">작동 방식 보기</a>
-    </div>
+    <div class="snap-shot"><img src="shot-dash.png" alt="ECOYA SNAP 대시보드 — 현장에서 필요한 일을 말로 적으면 AI가 체크리스트와 필요한 사진 목록으로 정리합니다" width="750" height="560" loading="lazy"></div>
   </div>
-  <div class="snap-shot"><img src="shot-dash.png" alt="ECOYA SNAP 대시보드 — 현장에서 필요한 일을 말로 적으면 AI가 체크리스트와 필요한 사진 목록으로 정리합니다" width="750" height="560" loading="lazy"></div>
+  <div class="hero-cta">
+    <a class="btn btn-solid" href="../contact/">도입 문의</a>
+    <a class="btn btn-ghost" href="#how">작동 방식 보기</a>
+  </div>
 </div></header>
 
 <section id="how" class="snap-sec how-sec"><div class="wrap">
