@@ -258,7 +258,13 @@ footer{border-top:1px solid var(--rule);padding:36px 0 48px}
 .deliv-txt .cap{font-family:var(--disp);font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--brand);text-transform:uppercase}
 .deliv-txt h3{margin-top:10px;font-size:clamp(20px,2.6vw,26px);font-weight:800;letter-spacing:-.01em}
 .deliv-txt p{margin-top:12px;color:var(--ink-soft);font-size:15.5px;line-height:1.7;max-width:24em}
-.deliv-ch2{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.deliv-ch2{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.deliv-feat{margin-top:18px;list-style:none;display:flex;flex-direction:column;gap:10px}
+.deliv-feat li{position:relative;padding-left:26px;font-size:14.5px;color:var(--ink-soft);line-height:1.5}
+.deliv-feat li::before{content:"\2713";position:absolute;left:0;top:-1px;color:var(--brand);font-weight:800}
+.deliv-send{margin-top:20px}
+.deliv-send .sl{font-family:var(--disp);font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--faint);text-transform:uppercase;display:block;margin-bottom:9px}
+.deliv-sec .snap-shot{width:100%;max-width:470px;justify-self:center}
 .deliv-ch2 li{font-size:12.5px;color:var(--ink-soft);background:var(--card2);border:1px solid var(--rule);border-radius:999px;padding:5px 12px}
 .deliv-trust{margin-top:48px;text-align:left}
 </style>
@@ -343,8 +349,16 @@ footer{border-top:1px solid var(--rule);padding:36px 0 48px}
     <div class="deliv-txt">
       <div class="cap">고객이 받는 웹 리포트</div>
       <h3>다운로드 없이, 링크 하나로</h3>
-      <p>항목별 증거 사진과 승인 상태를 고객이 바로 열어봅니다</p>
-      <ul class="deliv-ch2"><li>웹 링크</li><li>카카오 · SMS</li><li>이메일</li></ul>
+      <p>링크만 열면 항목별 증거 사진과 승인 상태가 한 화면에 펼쳐집니다. 앱 설치도, 회원가입도 필요 없어 해외 바이어도 그대로 확인합니다</p>
+      <ul class="deliv-feat">
+        <li>필요한 증거가 다 모였는지 한눈에</li>
+        <li>요청한 범위와 맞는지 함께 표시</li>
+        <li>받은 즉시 열어보고 바로 회신</li>
+      </ul>
+      <div class="deliv-send">
+        <span class="sl">이렇게 보냅니다</span>
+        <ul class="deliv-ch2"><li>웹 링크</li><li>카카오 · SMS</li><li>이메일</li></ul>
+      </div>
     </div>
     <div class="snap-shot"><img src="shot-web.png" alt="시큐어 웹 리포트 — 다운로드 없이 열람하는 고객용 검사 리포트, 항목별 증거 사진과 승인 표시" width="547" height="710" loading="lazy"></div>
   </div>
@@ -352,7 +366,16 @@ footer{border-top:1px solid var(--rule);padding:36px 0 48px}
     <div class="deliv-txt">
       <div class="cap">감사·ERP용 PDF 성적서</div>
       <h3>제출용 문서까지 한 번에</h3>
-      <p>체크리스트·사진 부록·서명자가 담긴 PDF로, 감사와 ERP에 그대로 씁니다</p>
+      <p>확인이 끝나면 체크리스트·사진 부록·서명자가 담긴 정식 PDF로 자동 정리됩니다. 따로 문서를 만들 필요 없이, 그대로 제출하고 첨부합니다</p>
+      <ul class="deliv-feat">
+        <li>검사 항목별 결과를 표로 정리</li>
+        <li>현장 사진이 부록으로 함께</li>
+        <li>담당자 서명·발행 정보까지 포함</li>
+      </ul>
+      <div class="deliv-send">
+        <span class="sl">이런 곳에</span>
+        <ul class="deliv-ch2"><li>감사 대응</li><li>ERP 첨부</li><li>거래처 제출</li></ul>
+      </div>
     </div>
     <div class="snap-shot"><img src="shot-pdf.png" alt="PDF 검사 성적서 — 체크리스트·사진 부록·서명자가 포함된 감사·ERP 대응 리포트" width="524" height="590" loading="lazy"></div>
   </div>
